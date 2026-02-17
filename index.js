@@ -8,6 +8,11 @@ function toggleMenu(){
 }
 
 function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+}
+
+
+function toggleMenu(){
     document.querySelector("nav").classList.toggle("active");
 }
 
