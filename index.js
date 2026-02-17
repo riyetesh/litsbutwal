@@ -1,20 +1,23 @@
-function toggleMenu(){
-const menu=document.getElementById("mobileMenu");
-menu.classList.toggle("hidden");
-}
-
-function toggleMenu(){
-    document.getElementById("mobileMenu").classList.toggle("hidden");
-}
-
+//Mobile Menu Toggle
 function toggleMenu(){
     document.getElementById("navMenu").classList.toggle("show");
 }
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navMenu").classList.remove("show");
+    });
+});
 
+document.addEventListener("click", function(e){
+    const menu = document.getElementById("navMenu");
+    const toggle = document.querySelector(".menu-toggle");
 
-function toggleMenu(){
-    document.querySelector("nav").classList.toggle("active");
-}
+    if(!menu.contains(e.target) && !toggle.contains(e.target)){
+        menu.classList.remove("show");
+    }
+});
+
+//slideshow
 
 let slideIndex = 1;
 showSlide(slideIndex);
