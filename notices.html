@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notices | LITS College Butwal</title>
+
+<link rel="stylesheet" href="notices.css">
+
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="container header-flex">
+        <h1>LITS College Butwal</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="notices.html" class="active">Notices</a>
+            <a href="#">Admissions</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+</header>
+
+
+<!-- ===== PAGE TITLE ===== -->
+<section class="page-title">
+    <h2>College Notices</h2>
+    <p>Latest announcements from Lumbini Institute of Technical Sciences</p>
+</section>
+
+
+<!-- ===== NOTICE GRID ===== -->
+<section class="notice-grid-section">
+<div class="container notice-grid">
+
+    <!-- notice item -->
+    <div class="notice-card">
+        <img src="Assets/notices/1.jpg" onclick="openModal(this.src)">
+    </div>
+
+    <div class="notice-card">
+        <img src="Assets/notices/2.jpg" onclick="openModal(this.src)">
+    </div>
+
+    <div class="notice-card">
+        <img src="Assets/notices/3.jpg" onclick="openModal(this.src)">
+    </div>
+
+    <div class="notice-card">
+        <img src="Assets/notices/4.jpg" onclick="openModal(this.src)">
+    </div>
+
+    <div class="notice-card">
+        <img src="Assets/notices/5.jpg" onclick="openModal(this.src)">
+    </div>
+
+</div>
+</section>
+
+
+<!-- ===== FULLSCREEN MODAL ===== -->
+<div id="imgModal" class="img-modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="modalImg">
+</div>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container footer-grid">
+
+        <div>
+            <h3>LITS College</h3>
+            <p>
+                Lumbini Institute of Technical Sciences  
+                Chandbari (Chandra Path), Butwal  
+                Phone: 985-7034843
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#">Admissions</a>
+            <a href="#">Programs</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div>
+            <h3>Programs</h3>
+            <p>Health Assistant (HA)</p>
+            <p>Radiography</p>
+            <p>Physiotherapy</p>
+            <p>Civil Sub Overseer</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 LITS College Butwal
+    </div>
+</footer>
+
+
+<script src="notices.js"></script>
+</body>
+</html>

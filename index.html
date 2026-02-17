@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LITS College Butwal</title>
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="Assets/favicon/favicon.ico" type="image/x-icon" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="Assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="Assets/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="Assets/favicon/apple-touch-icon.png"
+    />
+
+    <meta name="theme-color" content="#0d1b2a" />
+
+    <meta
+      name="description"
+      content="Lumbini Institute of Technical Sciences, Butwal – Leading CTEVT affiliated technical college offering Health Assistant, Radiography, Physiotherapy, Civil Engineering & Survey programs."
+    />
+
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="font-sans bg-gray-50">
+    <!-- ================= HEADER ================= -->
+    <header id="header">
+      <!-- ===== TOP INFO BAR ===== -->
+      <div class="topbar">
+        <div class="container topbar-flex">
+          <div>Lumbini Institute of Technical Sciences • Chandbari, Butwal</div>
+          <div>
+            <a href="tel:+9779857034843">+977 985-7034843</a>
+            <span class="divider">|</span>
+            <a href="mailto:litscollegebutwal@gmail.com"
+              >litscollegebutwal@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== MAIN NAVBAR ===== -->
+      <nav class="navbar">
+        <div class="container nav-flex">
+          <!-- LOGO -->
+          <a href="#home" class="logo">
+            <img src="Assets/logo.png" alt="LITS Logo" />
+            <div>
+              <h1>LITS College</h1>
+              <span>Butwal, Nepal</span>
+            </div>
+          </a>
+
+          <!-- NAV LINKS -->
+          <ul class="nav-links" id="navMenu">
+            <li><a href="#home">Home</a></li>
+
+            <li class="dropdown">
+              <a href="#about">About</a>
+              <ul class="dropdown-menu">
+                <li><a href="#about">About College</a></li>
+                <li><a href="#administration">Administration</a></li>
+                <li><a href="#stats">Achievements</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#programs">Programs</a></li>
+
+            <li><a href="#admissions">Admissions</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+            <li>
+              <a href="YOUR_GOOGLE_FORM_LINK" class="apply-btn-nav">
+                Inquire
+              </a>
+            </li>
+          </ul>
+
+          <!-- MOBILE MENU -->
+          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <!-- ===== HERO SLIDESHOW ===== -->
+    <section id="home" class="hero">
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="Assets/slideshow/1.jpg" alt="LITS Campus" />
+        </div>
+
+        <div class="slide fade">
+          <img src="Assets/slideshow/2.jpg" alt="LITS Labs" />
+        </div>
+
+        <div class="slide fade">
+          <img src="Assets/slideshow/3.jpg" alt="LITS Students" />
+        </div>
+
+        <div class="slide fade">
+          <img src="Assets/slideshow/4.jpg" alt="LITS Training" />
+        </div>
+
+        <div class="slide fade">
+          <img src="Assets/slideshow/5.jpg" alt="LITS Programs" />
+        </div>
+
+        <!-- ARROWS -->
+        <a class="prev" onclick="changeSlide(-1)">❮</a>
+        <a class="next" onclick="changeSlide(1)">❯</a>
+      </div>
+
+      <!-- DOTS -->
+      <div class="dots">
+        <span onclick="currentSlide(1)"></span>
+        <span onclick="currentSlide(2)"></span>
+        <span onclick="currentSlide(3)"></span>
+        <span onclick="currentSlide(4)"></span>
+        <span onclick="currentSlide(5)"></span>
+      </div>
+    </section>
+
+    <!-- ===== NOTICE BOARD ===== -->
+    <section id="notice" class="notice-section">
+      <div class="container notice-box">
+        <h2 class="notice-title">Latest Notice</h2>
+
+        <div class="notice-slider">
+          <!-- PREVIOUS -->
+          <button
+            class="notice-btn prev"
+            onclick="prevNotice()"
+            aria-label="Previous Notice"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          <!-- IMAGE -->
+          <img
+            id="noticeImage"
+            src="Assets/notices/1.jpg"
+            class="notice-img"
+            onclick="openNotice()"
+            alt="Latest Notice"
+          />
+
+          <!-- NEXT -->
+          <button
+            class="notice-btn next"
+            onclick="nextNotice()"
+            aria-label="Next Notice"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+        </div>
+
+        <a href="notices.html" class="view-all">View All Notices →</a>
+      </div>
+    </section>
+
+    <!-- FULLSCREEN MODAL -->
+    <div id="noticeModal" class="notice-modal">
+      <span class="close-modal" onclick="closeNotice()">×</span>
+      <img id="noticeFull" class="modal-content" />
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about-section">
+      <div class="container about-flex">
+        <!-- LEFT IMAGE -->
+        <div class="about-img">
+          <img src="Assets/about.jpg" alt="LITS College Campus" />
+        </div>
+
+        <!-- RIGHT TEXT -->
+        <div class="about-text">
+          <h2>About LITS College Butwal</h2>
+
+          <p>
+            Lumbini Institute of Technical Sciences (LITS) is a leading
+            CTEVT-affiliated technical college in Butwal offering Health
+            Sciences and Engineering programs.
+          </p>
+
+          <p>
+            Students from Rupandehi, Palpa, Gulmi, Kapilvastu and nearby
+            districts study here with modern labs, experienced faculty, and
+            career-focused practical training.
+          </p>
+
+          <ul class="about-points">
+            <li>
+              <span class="check-icon">✓</span>
+              CTEVT-affiliated technical programs
+            </li>
+
+            <li>
+              <span class="check-icon">✓</span>
+              Modern labs with hands-on practical training
+            </li>
+
+            <li>
+              <span class="check-icon">✓</span>
+              Qualified and experienced faculty
+            </li>
+
+            <li>
+              <span class="check-icon">✓</span>
+              Career guidance and placement support
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MESSAGE FROM DIRECTOR ===== -->
+    <section class="director-section">
+      <div class="container director-box">
+        <!-- PHOTO -->
+        <div class="director-img">
+          <img src="Assets/administators/basanta.jpg" alt="Managing Director" />
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="director-content">
+          <h2>Message from the Director</h2>
+
+          <p class="director-quote">
+            “At LITS College, we believe technical education should create
+            skilled professionals with strong values. Our goal is to prepare
+            students for real-world challenges and meaningful careers.”
+          </p>
+
+          <h3 class="director-name">Mr. Basanta Raj Khanal</h3>
+          <span class="director-title"
+            >Managing Director, LITS College Butwal</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROGRAMS ================= -->
+    <section id="programs" class="programs-section">
+      <div class="container">
+        <h2>Programs Offered</h2>
+
+        <div class="program-grid">
+
+  <!-- PROGRAM 1 -->
+  <div class="program-card">
+    <img src="Assets/programs/pharmacy.jpg" alt="Diploma in Pharmacy" />
+    <div class="program-content">
+      <h3>Diploma in Pharmacy</h3>
+      <span class="duration">Duration: 3 Years</span>
+      <p>
+        Professional pharmacy training covering pharmacology, drug dispensing,
+        hospital pharmacy practice, and community healthcare.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROGRAM 2 -->
+  <div class="program-card">
+    <img src="Assets/programs/lab.jpg" alt="Lab Technician Program" />
+    <div class="program-content">
+      <h3>Lab Technician</h3>
+      <span class="duration">Duration: 3 Years</span>
+      <p>
+        Clinical laboratory training in pathology, microbiology, blood testing,
+        and modern diagnostic techniques.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROGRAM 3 -->
+  <div class="program-card">
+    <img src="Assets/programs/ha.jpg" alt="Health Assistant Program" />
+    <div class="program-content">
+      <h3>Health Assistant (HA)</h3>
+      <span class="duration">Duration: 3 Years</span>
+      <p>
+        CTEVT-affiliated general medicine diploma preparing students for
+        hospital, clinic, and rural healthcare services.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROGRAM 4 -->
+  <div class="program-card">
+    <img src="Assets/programs/radiography.jpg" alt="Radiography Program" />
+    <div class="program-content">
+      <h3>PCL in Radiography</h3>
+      <span class="duration">Duration: 3 Years</span>
+      <p>
+        Medical imaging program covering X-ray techniques, patient safety,
+        and diagnostic radiology practice.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROGRAM 5 -->
+  <div class="program-card">
+    <img src="Assets/programs/physio.jpg" alt="Physiotherapy Program" />
+    <div class="program-content">
+      <h3>PCL in Physiotherapy</h3>
+      <span class="duration">Duration: 3 Years</span>
+      <p>
+        Rehabilitation therapy training focused on injury recovery,
+        mobility improvement, and clinical physiotherapy practice.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADMISSIONS SECTION ===== -->
+    <section id="admissions" class="admission-section">
+      <div class="container admission-box">
+        <h2>Admissions Open 2026</h2>
+
+        <p class="admission-text">
+          Applications are now open for Health Science and Engineering diploma
+          programs. Limited seats available. Apply early to secure your
+          admission.
+        </p>
+
+        <div class="admission-buttons">
+          <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="apply-btn">
+            Inquire
+          </a>
+
+          <a href="tel:+9779857034843" class="call-btn">
+            Call Admission Office
+          </a>
+        </div>
+
+        <p class="admission-note">
+          📍 Chandbari (Chandra Path), Butwal &nbsp; | &nbsp; 📞 985-7034843
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat">
+          <h3 class="counter" data-target="500">0</h3>
+          <p>Students</p>
+        </div>
+
+        <div class="stat">
+          <h3 class="counter" data-target="10">0</h3>
+          <p>Programs</p>
+        </div>
+
+        <div class="stat">
+          <h3 class="counter" data-target="20">0</h3>
+          <p>Faculty</p>
+        </div>
+
+        <div class="stat">
+          <h3 class="counter" data-target="8">0</h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADMINISTRATION SECTION ===== -->
+    <section id="administration" class="administration">
+      <div class="container">
+        <h2 class="section-title">Administration</h2>
+        <p class="section-sub">
+          Leadership team guiding Lumbini Institute of Technical Sciences
+        </p>
+
+        <div class="admin-grid">
+          <div class="admin-card">
+            <img src="Assets/administators/basanta.jpg" alt="Managing Director" />
+            <h3>Mr. Basanta Raj Khanal</h3>
+            <p>Managing Director</p>
+          </div>
+
+          <div class="admin-card">
+            <img
+              src="Assets/administators/nagendra.jpg"
+              alt="Administrative Officer"
+            />
+            <h3>Mr.Nagendra Ray Yadav</h3>
+            <p>Administrative Officer</p>
+          </div>
+
+          <div class="admin-card">
+            <img src="Assets/administators/laxmi.jpg" alt="Accounts Head" />
+            <h3>Ms. Laxmi Neupane</h3>
+            <p>Accounts Section Head</p>
+          </div>
+
+          <div class="admin-card">
+            <img src="Assets/administators/subash.jpg" alt="Admission Officer" />
+            <h3>Mr. Subash Ghimire </h3>
+            <p>Admission Officer</p>
+          </div>
+
+          <div class="admin-card">
+            <img src="Assets/administators/sabita.jpg" alt="Principal" />
+            <h3>Ms. Sabita Niraula </h3>
+            <p> Principal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FACILITIES ================= -->
+    <section id="facilities" class="facilities-section">
+      <div class="container">
+        <h2 class="section-title">Campus Facilities</h2>
+        <p class="section-sub">
+          Modern infrastructure supporting quality technical education
+        </p>
+
+        <div class="facilities-grid">
+          <!-- Facility 1 -->
+          <div class="facility-card">
+            <img src="Assets/facilities/lab.jpg" alt="Modern Labs" />
+            <div class="facility-content">
+              <h3>Modern Laboratories</h3>
+              <p>
+                Fully equipped health and engineering labs with modern
+                diagnostic and surveying instruments.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 2 -->
+          <div class="facility-card">
+            <img src="Assets/facilities/library.jpg" alt="Library" />
+            <div class="facility-content">
+              <h3>Library & Study Hall</h3>
+              <p>
+                Quiet study environment with updated technical books, journals,
+                and exam preparation materials.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 3 -->
+          <div class="facility-card">
+            <img src="Assets/facilities/classroom.jpg" alt="Smart Classrooms" />
+            <div class="facility-content">
+              <h3>Smart Classrooms</h3>
+              <p>
+                Digital classrooms with projectors and modern teaching methods
+                for better learning experience.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 4 -->
+          <div class="facility-card">
+            <img src="Assets/facilities/hostel.jpg" alt="Hostel" />
+            <div class="facility-content">
+              <h3>Girls Hostel Support</h3>
+              <p>
+                Safe accommodation guidance with nearby hostel facilities for
+                female students from outside districts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 5 -->
+          <div class="facility-card">
+            <img
+              src="Assets/facilities/practical.jpg"
+              alt="Practical Training"
+            />
+            <div class="facility-content">
+              <h3>Field Practical Training</h3>
+              <p>
+                Real-world hospital visits, survey camps, and site training
+                sessions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Facility 6 -->
+          <div class="facility-card">
+            <img src="Assets/facilities/career.jpg" alt="Career Support" />
+            <div class="facility-content">
+              <h3>Career Guidance</h3>
+              <p>
+                Internship support, job guidance, and counseling for career
+                development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery" class="gallery-section" >
+      <div class="container">
+        <h2 class="section-title">Campus Gallery</h2>
+        <p class="section-sub">Life at LITS College Butwal</p>
+
+        <div class="gallery-grid">
+          <img src="Assets/gallery/1.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/2.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/3.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/4.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/5.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/6.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/7.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/8.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/9.jpg" onclick="openLightbox(this)" />
+          <img src="Assets/gallery/10.jpg" onclick="openLightbox(this)" />
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-img" />
+    </div>
+
+    <!-- ================= MAP ================= -->
+<section class="map-section">
+      <h2 class="text-3xl font-bold text-blue-900 mb-6">Visit Our Campus</h2>
+
+      <div class="max-w-6xl mx-auto px-6 mt-8">
+        <iframe
+          class="w-full h-[420px] border-0 rounded-xl shadow"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d883.145987994213!2d83.46821117394857!3d27.699251037729876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399686863a943663%3A0x9972939592f96ebd!2sLits%20College!5e0!3m2!1sen!2snp!4v1771309896199!5m2!1sen!2snp"
+        >
+        </iframe>
+      </div>
+    </section>
+
+   <!-- ================= FOOTER ================= -->
+<footer id="contact" class="bg-gray-900 text-gray-300 pt-16">
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+
+    <!-- COLLEGE INFO -->
+    <div>
+      <h2 class="text-2xl font-bold text-white mb-4">
+        Lumbini Institute of Technical Sciences
+      </h2>
+      <p class="text-sm leading-6 mb-4">
+        LITS College Butwal is a CTEVT-affiliated technical institute offering
+        professional health-science diploma programs for students across
+        Rupandehi and surrounding districts.
+      </p>
+
+      <a href="https://maps.app.goo.gl/EQN1xaP3KDaovuXv7"
+         target="_blank"
+         class="text-blue-400 text-sm hover:text-white">
+         View Campus Location →
+      </a>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#about" class="hover:text-white">About College</a></li>
+        <li><a href="#programs" class="hover:text-white">Programs</a></li>
+        <li><a href="#admissions" class="hover:text-white">Admissions</a></li>
+        <li><a href="#gallery" class="hover:text-white">Gallery</a></li>
+        <li><a href="#notice" class="hover:text-white">Notices</a></li>
+      </ul>
+    </div>
+
+    <!-- PROGRAMS -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Our Programs</h3>
+      <ul class="space-y-2 text-sm">
+        <li>Diploma in Pharmacy (3 Years)</li>
+        <li>Lab Technician (3 Years)</li>
+        <li>Health Assistant – HA (3 Years)</li>
+        <li>PCL in Radiography (3 Years)</li>
+        <li>PCL in Physiotherapy (3 Years)</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Contact</h3>
+      <p class="text-sm leading-6">
+        Chandbari (Chandra Path)<br>
+        Butwal-32907, Rupandehi, Nepal<br><br>
+
+        Phone:
+        <a href="tel:+9779857034843" class="hover:text-white">
+          +977-985-7034843
+        </a><br>
+
+        Email:
+        <a href="mailto:litscollegebutwal@gmail.com" class="hover:text-white">
+          litscollegebutwal@gmail.com
+        </a>
+      </p>
+
+<div class="mt-4 text-sm social-links">
+  <a href="https://www.facebook.com/litscollegebutwal/" target="_blank" class="fb-link">
+    <span class="icon">
+      <i class="fab fa-facebook-f"></i>
+    </span>
+    Follow us on Facebook
+  </a>
+</div>
+
+
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="border-t border-gray-700 mt-10 py-6 text-center text-sm">
+    © 2026 Lumbini Institute of Technical Sciences, Butwal – Nepal
+  </div>
+
+</footer>
+
+
+    <script src="index.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter");
+        let started = false;
+
+        function startCounters() {
+          if (started) return;
+
+          counters.forEach((counter) => {
+            const target = parseInt(counter.getAttribute("data-target"));
+            let count = 0;
+            const step = Math.ceil(target / 100);
+
+            const update = () => {
+              count += step;
+              if (count < target) {
+                counter.innerText = count;
+                setTimeout(update, 20);
+              } else {
+                counter.innerText = target + "+";
+              }
+            };
+
+            update();
+          });
+
+          started = true;
+        }
+
+        window.addEventListener("scroll", () => {
+          const section = document.querySelector(".stats-section");
+          if (!section) return;
+
+          const position = section.getBoundingClientRect().top;
+
+          if (position < window.innerHeight - 100) {
+            startCounters();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
