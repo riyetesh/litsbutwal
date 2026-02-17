@@ -756,7 +756,7 @@ header{
 /* GRID */
 .program-grid{
     display:grid;
-    grid-template-columns:repeat(3,minmax(280px,1fr));
+    grid-template-columns:repeat(3,1fr);
     gap:30px;
 }
 
@@ -806,9 +806,31 @@ header{
 }
 
 /* MOBILE FIX */
-@media(max-width:500px){
-    .section-title{
-        font-size:26px;
+
+/* Tablet */
+@media(max-width:900px){
+    .program-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+    .program-card img{
+        height:180px;
+    }
+
+    .program-content{
+        padding:16px;
+    }
+
+    .program-content h3{
+        font-size:18px;
+    }
+
+    .program-content p{
+        font-size:14px;
     }
 }
 
